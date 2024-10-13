@@ -11,7 +11,7 @@ public class FileRead {
         InputContainer inputContainer = new InputContainer(); // Create the container
 
         try {
-            // Parse the JSON file
+
             Object obj = parser.parse(new FileReader("./doc/input.json"));
             JSONObject jsonObject = (JSONObject) obj;
 
@@ -36,10 +36,10 @@ public class FileRead {
                         }
                     }
 
-                    // Classify based on isHumanoid
+
                     String classification = (isHumanoid != null && isHumanoid) ? "Humanoid" : "Non-Humanoid";
 
-                    // Create Input object and add it to the container
+
                     Input input = new Input(id, isHumanoid, planet, age, traits, classification);
                     inputContainer.addInput(input);
                 }
@@ -49,6 +49,6 @@ public class FileRead {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return inputContainer; // Return the populated InputContainer
+        return inputContainer;
     }
 }

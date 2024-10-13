@@ -6,7 +6,7 @@ public class Input {
     private String planet;
     private Long age;
     private List<String> traits;
-    private String classification; // New field for classification
+    private String classification;
 
     // Constructor
     public Input(Long id, Boolean isHumanoid, String planet, Long age, List<String> traits, String classification) {
@@ -15,7 +15,7 @@ public class Input {
         this.planet = planet;
         this.age = age;
         this.traits = traits;
-        this.classification = classification; // Initialize classification
+        this.classification = classification;
     }
 
     // Getters and Setters
@@ -40,7 +40,7 @@ public class Input {
     }
 
     public String getClassification() {
-        return classification; // Getter for classification
+        return classification;
     }
 
     @Override
