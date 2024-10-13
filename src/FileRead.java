@@ -1,16 +1,19 @@
 import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class FileRead {
-    public static void Parse() {
+    public static InputContainer Parse() {
         JSONParser parser = new JSONParser();
+        InputContainer inputContainer = new InputContainer(); // Create the container
+
         try {
+            // Parse the JSON file
             Object obj = parser.parse(new FileReader("./doc/input.json"));
             JSONObject jsonObject = (JSONObject) obj;
-
-            System.out.println("JSON Object: " + jsonObject);
 
             JSONArray inputArray = (JSONArray) jsonObject.get("input");
 
@@ -18,25 +21,27 @@ public class FileRead {
                 for (Object o : inputArray) {
                     JSONObject character = (JSONObject) o;
 
+                    // Extract fields from JSON
                     Long id = (Long) character.get("id");
                     Boolean isHumanoid = (Boolean) character.get("isHumanoid");
                     String planet = (String) character.get("planet");
                     Long age = (Long) character.get("age");
-                    JSONArray traits = (JSONArray) character.get("traits");
+                    JSONArray traitsArray = (JSONArray) character.get("traits");
 
-                    System.out.println("\nid: " + (id != null ? id : "null"));
-                    System.out.println("isHumanoid: " + (isHumanoid != null ? isHumanoid : "null"));
-                    System.out.println("planet: " + (planet != null ? planet : "null"));
-                    System.out.println("age: " + (age != null ? age : "null"));
-
-                    System.out.println("traits:");
-                    if (traits != null) {
-                        for (Object trait : traits) {
-                            System.out.println(trait);
+                    // Extract traits into a List
+                    List<String> traits = new ArrayList<>();
+                    if (traitsArray != null) {
+                        for (Object trait : traitsArray) {
+                            traits.add((String) trait);
                         }
-                    } else {
-                        System.out.println("null");
                     }
+
+                    // Classify based on isHumanoid
+                    String classification = (isHumanoid != null && isHumanoid) ? "Humanoid" : "Non-Humanoid";
+
+                    // Create Input object and add it to the container
+                    Input input = new Input(id, isHumanoid, planet, age, traits, classification);
+                    inputContainer.addInput(input);
                 }
             } else {
                 System.out.println("Key 'input' not found in the JSON object.");
@@ -44,5 +49,6 @@ public class FileRead {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return inputContainer; // Return the populated InputContainer
     }
 }
