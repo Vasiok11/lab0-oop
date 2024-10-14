@@ -1,15 +1,15 @@
 # Classification values
 
-**isHuman**: 
-- true, 
-- false 
+**isHuman**:
+- true,
+- false
 
-**planets**: 
-- Earth, 
-- Asgard, 
-- Betelgeuse, 
-- Vogsphere, 
-- Kashyyyk, 
+**planets**:
+- Earth,
+- Asgard,
+- Betelgeuse,
+- Vogsphere,
+- Kashyyyk,
 - Endor
 
 **age**: characterized by ranges

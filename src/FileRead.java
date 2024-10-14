@@ -8,10 +8,9 @@ import org.json.simple.parser.JSONParser;
 public class FileRead {
     public static InputContainer Parse() {
         JSONParser parser = new JSONParser();
-        InputContainer inputContainer = new InputContainer(); // Create the container
+        InputContainer inputContainer = new InputContainer();
 
         try {
-
             Object obj = parser.parse(new FileReader("./doc/input.json"));
             JSONObject jsonObject = (JSONObject) obj;
 
@@ -21,14 +20,12 @@ public class FileRead {
                 for (Object o : inputArray) {
                     JSONObject character = (JSONObject) o;
 
-                    // Extract fields from JSON
                     Long id = (Long) character.get("id");
                     Boolean isHumanoid = (Boolean) character.get("isHumanoid");
                     String planet = (String) character.get("planet");
                     Long age = (Long) character.get("age");
                     JSONArray traitsArray = (JSONArray) character.get("traits");
 
-                    // Extract traits into a List
                     List<String> traits = new ArrayList<>();
                     if (traitsArray != null) {
                         for (Object trait : traitsArray) {
@@ -36,11 +33,7 @@ public class FileRead {
                         }
                     }
 
-
-                    String classification = (isHumanoid != null && isHumanoid) ? "Humanoid" : "Non-Humanoid";
-
-
-                    Input input = new Input(id, isHumanoid, planet, age, traits, classification);
+                    Input input = new Input(id, isHumanoid, planet, age, traits);
                     inputContainer.addInput(input);
                 }
             } else {
