@@ -21,7 +21,6 @@ public class Input {
     private String classify() {
         boolean humanoid = (isHumanoid != null) && isHumanoid;
 
-
         if (planet.equals("kashyyyk") && isHumanoidFalse() && ageInRangeOrNull(0, 400) && hasAllTraits("hairy", "tall")) {
             return "Star Wars Universe (Wookie)";
         }
@@ -48,18 +47,19 @@ public class Input {
 
         if (hasAllTraits("green", "bulky")) return "Hitchhiker's Universe (Vogons)";
         if (hasAllTraits("green")) return "Hitchhiker's Universe (Vogons)";
-
         if (hasAnyTrait("bulky") && !hasAnyTrait("green")) return "Lord of the Rings Universe (Dwarf)";
-
         if (hasAllTraits("hairy", "tall")) return "Star Wars Universe (Wookie)";
         if (hasAllTraits("short", "hairy")) return "Star Wars Universe (Ewok)";
         if (hasAllTraits("blonde", "tall")) return "Marvel Universe (Asgardian)";
         if (hasAllTraits("extra_arms", "extra_head")) return "Hitchhiker's Universe (Betelgeusian)";
-
         if (hasAnyTrait("extra_arms")) return "Hitchhiker's Universe (Betelgeusian)";
         if (hasAnyTrait("extra_head")) return "Hitchhiker's Universe (Betelgeusian)";
 
         return "Lord of the Rings Universe (Elf)";
+    }
+
+    public String getClassification() {
+        return classification;
     }
 
     private boolean isHumanoidFalse() {
@@ -93,13 +93,25 @@ public class Input {
         return normalized;
     }
 
-    @Override
-    public String toString() {
-        return "ID: " + id +
-                ", IsHumanoid: " + isHumanoid +
-                ", Planet: " + planet +
-                ", Age: " + (age != null ? age : "") +
-                ", Traits: " + String.join(", ", traits) +
-                ", Classification: " + classification;
+    public String toJson() {
+        StringBuilder json = new StringBuilder("{ ");
+        json.append("\"id\": ").append(id).append(", ");
+        json.append("\"isHumanoid\": ").append(isHumanoid).append(", ");
+        json.append("\"planet\": \"").append(planet).append("\", ");
+        json.append("\"age\": ").append(age != null ? age : "null").append(", ");
+        json.append("\"traits\": ").append(traitsToJson()).append(", ");
+        json.append("\"classification\": \"").append(classification).append("\" ");
+        json.append("}");
+        return json.toString();
+    }
+
+    private String traitsToJson() {
+        StringBuilder json = new StringBuilder("[");
+        for (int i = 0; i < traits.size(); i++) {
+            json.append("\"").append(traits.get(i)).append("\"");
+            if (i < traits.size() - 1) json.append(", ");
+        }
+        json.append("]");
+        return json.toString();
     }
 }

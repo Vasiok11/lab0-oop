@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InputContainer {
-    protected List<Input> inputs;
+    private final List<Input> inputs;
 
     public InputContainer() {
         this.inputs = new ArrayList<>();
@@ -12,10 +12,7 @@ public class InputContainer {
         inputs.add(input);
     }
 
-
-    public void printAllInputs() {
-        for (Input input : inputs) {
-            System.out.println(input);
-        }
+    public List<Input> getAllInputs() {
+        return inputs;
     }
 }
