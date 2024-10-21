@@ -1,0 +1,8 @@
+[
+{ "id": 3, "isHumanoid": true, "planet": "betelgeuse", "age": 59, "traits": ["extra_arms", "extra_head"], "classification": "Hitchhiker's Universe (Betelgeusian)" },
+{ "id": 4, "isHumanoid": false, "planet": "vogsphere", "age": 128, "traits": ["green", "bulky"], "classification": "Hitchhiker's Universe (Vogons)" },
+{ "id": 10, "isHumanoid": null, "planet": "betelgeuse", "age": 45, "traits": ["extra_arms", "extra_head"], "classification": "Hitchhiker's Universe (Betelgeusian)" },
+{ "id": 11, "isHumanoid": false, "planet": "", "age": 128, "traits": ["green"], "classification": "Hitchhiker's Universe (Vogons)" },
+{ "id": 17, "isHumanoid": null, "planet": "", "age": 26, "traits": ["extra_arms"], "classification": "Hitchhiker's Universe (Betelgeusian)" },
+{ "id": 21, "isHumanoid": null, "planet": "", "age": 82, "traits": ["extra_head"], "classification": "Hitchhiker's Universe (Betelgeusian)" }
+]
