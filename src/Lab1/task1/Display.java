@@ -12,22 +12,6 @@ public class Display {
         this.model = model;
     }
 
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
-    public void setPpi(float ppi) {
-        this.ppi = ppi;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
     public int getWidth() {
         return width;
     }
