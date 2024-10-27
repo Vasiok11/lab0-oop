@@ -29,16 +29,16 @@ public class Display {
     }
 
     void compareSize(Display m) {
-        String s = (this.width * this.height) > (m.getWidth() * m.getHeight()) ? this.model + " is bigger\n" : (this.width * this.height) < (m.getWidth() * m.getHeight()) ? m.getModel() + " is bigger" : "The displays are equal";
+        String s = (this.width * this.height) > (m.getWidth() * m.getHeight()) ? this.model + " is bigger" : (this.width * this.height) < (m.getWidth() * m.getHeight()) ? m.getModel() + " is bigger" : "The displays are equal";
         System.out.println(s);
     }
 
     void compareSharpness(Display m) {
-        String s = (this.ppi) > (m.getPpi()) ? this.model + " is sharper\n" : (this.ppi) < (m.getPpi()) ? m.getModel() + " is sharper" : "The displays have equal sharpness";
+        String s = (this.ppi) > (m.getPpi()) ? this.model + " is sharper" : (this.ppi) < (m.getPpi()) ? m.getModel() + " is sharper" : "The displays have equal sharpness";
         System.out.println(s);
     }
 
-    void compareWithMonitor(Display m) {
+    public void compareWithMonitor(Display m) {
         compareSize(m);
         compareSharpness(m);
 
