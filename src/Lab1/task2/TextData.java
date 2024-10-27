@@ -103,6 +103,6 @@ public class TextData {
                 "Number of Consonants: " + numberOfConsonants + "\n" +
                 "Number of Letters: " + numberOfLetters + "\n" +
                 "Number of Sentences: " + numberOfSentences + "\n" +
-                "Longest Word: " + longestWord;
+                "Longest Word: " + longestWord + "\n";
     }
 }
