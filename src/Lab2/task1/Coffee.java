@@ -1,0 +1,12 @@
+package Lab2.task1;
+
+public class Coffee {
+    enum Intensity{
+        LIGHT,
+        NORMAL,
+        STRONG
+    }
+    private Intensity coffeeIntensity;
+    private static String name = "Coffee";
+
+}
