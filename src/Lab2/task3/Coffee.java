@@ -1,4 +1,4 @@
-package Lab2.task2;
+package Lab2.task3;
 
 
 public class Coffee {
@@ -17,6 +17,10 @@ public class Coffee {
 
     public void printCoffeeDetails(){
         System.out.println("You wanted:" + name + "\nwith intensity:" + coffeeIntensity);
+    }
+
+    public void makeCoffeeBase(){
+        System.out.println("I am making: " + name+ "\nIntensity set to: " + coffeeIntensity);
     }
 }
 
