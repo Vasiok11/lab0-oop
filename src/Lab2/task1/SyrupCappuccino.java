@@ -1,6 +1,6 @@
 package Lab2.task1;
 
-public class SyrupCappuccino extends Coffee{
+public class SyrupCappuccino extends Cappuccino{
      enum SyrupType{
         MACADAMIA,
         VANILLA,
@@ -9,8 +9,4 @@ public class SyrupCappuccino extends Coffee{
         CHOCOLATE,
         POPCORN
     }
-    private Intensity intensityCoffee;
-    int mltrOfMilk;
-    private SyrupType syrup;
-    private static final String coffee = "SyrupCappuccino";
 }

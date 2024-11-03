@@ -6,7 +6,6 @@ public class Coffee {
         NORMAL,
         STRONG
     }
-    private Intensity coffeeIntensity;
     private static String name = "Coffee";
 
 }
