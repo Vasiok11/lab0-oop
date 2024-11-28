@@ -23,7 +23,7 @@ public class Distribution {
                 RobotDinner.serveDinner(carId);
             }
         }
-
+        else System.out.println("Does not want to dine");
 
     }
 }

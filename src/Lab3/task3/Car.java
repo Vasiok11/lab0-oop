@@ -1,0 +1,35 @@
+package Lab3.task3;
+
+public class Car {
+    public String getCarId() {
+        return carId;
+    }
+
+    public String getCarType() {
+        return carType;
+    }
+
+    public String getPerson() {
+        return person;
+    }
+
+    public boolean isDining() {
+        return isDining;
+    }
+
+    private String carId;
+    private String carType;
+    private String person;
+    private boolean isDining;
+
+    public Car(String carId, String carType, String person, boolean isDining) {
+        this.carId = carId;
+        this.carType = carType;
+        this.person = person;
+        this.isDining = isDining;
+    }
+    @Override
+    public String toString() {
+        return carId;
+    }
+}
