@@ -47,8 +47,7 @@ public class CarStation {
 
             if (car.isDining()) {
                 diningService.serveDinner(car.getCarId());
-            }
-            else System.out.println("Does not want to dine.");
+            } else System.out.println("Does not want to dine.");
 
 
             refuelingService.refuel(car.getCarId());
