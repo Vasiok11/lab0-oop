@@ -1,0 +1,8 @@
+[
+{ "id": 5, "isHumanoid": true, "planet": "earth", "age": 451, "traits": ["blonde", "pointy_ears"], "classification": "Lord of the Rings Universe (Elf)" },
+{ "id": 6, "isHumanoid": true, "planet": "earth", "age": 124, "traits": ["short", "bulky"], "classification": "Lord of the Rings Universe (Dwarf)" },
+{ "id": 12, "isHumanoid": true, "planet": "", "age": 7523, "traits": [], "classification": "Lord of the Rings Universe (Elf)" },
+{ "id": 13, "isHumanoid": null, "planet": "earth", "age": null, "traits": ["short", "bulky"], "classification": "Lord of the Rings Universe (Dwarf)" },
+{ "id": 18, "isHumanoid": false, "planet": "", "age": null, "traits": ["bulky"], "classification": "Lord of the Rings Universe (Dwarf)" },
+{ "id": 20, "isHumanoid": true, "planet": "", "age": null, "traits": ["bulky"], "classification": "Lord of the Rings Universe (Dwarf)" }
+]
