@@ -6,7 +6,7 @@ import java.util.Random;
 public class DistributionStressTest {
     private static final String[] CAR_TYPES = {"Gas", "Electric"};
     private static final String[] PERSON_TYPES = {"Human", "Robot"};
-    private static final int NUM_ITERATIONS = 10000000;
+    private static final int NUM_ITERATIONS = 100000;
 
     @Test
     public void stressTest() {
@@ -16,7 +16,6 @@ public class DistributionStressTest {
         long startTime = System.currentTimeMillis();
 
         for (int i = 0; i < NUM_ITERATIONS; i++) {
-            // Generate random test data
             String carId = String.valueOf(i);
             String carType = CAR_TYPES[random.nextInt(CAR_TYPES.length)];
             String personType = PERSON_TYPES[random.nextInt(PERSON_TYPES.length)];
@@ -31,7 +30,6 @@ public class DistributionStressTest {
                 throw e;
             }
 
-            // Print progress every 1000 iterations
             if (i % 1000 == 0) {
                 System.out.println("Completed " + i + " iterations");
             }

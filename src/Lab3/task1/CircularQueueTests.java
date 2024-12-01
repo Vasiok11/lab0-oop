@@ -31,7 +31,7 @@ public class CircularQueueTests{
         queue.enqueue("Car4");
         queue.enqueue("Car5");
         assertTrue(queue.isFull());
-        queue.enqueue("Car6"); // Should print "Queue is full"
+        queue.enqueue("Car6");
         assertTrue(outContent.toString().contains("Queue is full"));
     }
 
@@ -40,8 +40,8 @@ public class CircularQueueTests{
         queue.enqueue("Car1");
         queue.enqueue("Car2");
         queue.enqueue("Car3");
-        queue.dequeue(); // Remove Car1
-        queue.dequeue(); // Remove Car2
+        queue.dequeue();
+        queue.dequeue();
         queue.enqueue("Car4");
         queue.enqueue("Car5");
         assertFalse(queue.isEmpty());

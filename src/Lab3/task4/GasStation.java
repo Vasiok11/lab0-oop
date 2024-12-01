@@ -1,8 +1,8 @@
 package Lab3.task4;
 
 public class GasStation implements Refuelable {
-    private final CircularQueue<Car> carQueue = new CircularQueue<>(5); // Queue size limited to 5
-    private final CircularQueue<Car> waitingCars = new CircularQueue<>(25); // Large enough to hold all waiting cars
+    private final CircularQueue<Car> carQueue = new CircularQueue<>(5);
+    private final CircularQueue<Car> waitingCars = new CircularQueue<>(25);
     private int servedCount = 0;
 
     private final PeopleDinner peopleDinner = new PeopleDinner();
@@ -20,7 +20,6 @@ public class GasStation implements Refuelable {
 
     public void processCars() {
         while (!carQueue.isEmpty() || !waitingCars.isEmpty()) {
-            // Process cars in the main queue
             if (!carQueue.isEmpty()) {
                 Car car = (Car) carQueue.dequeue();
                 System.out.println("[GasStation] Refueling Car " + car.getCarId() + "...");
@@ -28,7 +27,6 @@ public class GasStation implements Refuelable {
                 servedCount++;
                 System.out.println("[GasStation] Total cars refueled: " + servedCount);
 
-                // Handle dining
                 if (car.isDining()) {
                     if ("PEOPLE".equalsIgnoreCase(car.getPerson())) {
                         System.out.println("[GasStation] Directing Car " + car.getCarId() + " to PeopleDinner.");
@@ -42,7 +40,6 @@ public class GasStation implements Refuelable {
                 }
             }
 
-            // Move cars from waiting list to main queue if space becomes available
             if (!carQueue.isFull() && !waitingCars.isEmpty()) {
                 Car waitingCar = (Car) waitingCars.dequeue();
                 carQueue.enqueue(waitingCar);

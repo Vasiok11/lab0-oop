@@ -1,4 +1,4 @@
-package Lab3.task4;
+package Lab3.task5;
 
 public class ElectricStation implements Refuelable {
     private final CircularQueue<Car> carQueue = new CircularQueue<>(5);

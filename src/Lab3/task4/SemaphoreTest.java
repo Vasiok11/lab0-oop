@@ -24,18 +24,15 @@ class SemaphoreTest {
 
     @Test
     void testParseCarFromJsonString() {
-        // JSON strings representing cars
         String mockJson1 = "{\"id\": 1, \"type\": \"ELECTRIC\", \"passengers\": \"PEOPLE\", \"isDining\": true, \"consumption\": 31}";
         String mockJson2 = "{\"id\": 2, \"type\": \"GAS\", \"passengers\": \"ROBOTS\", \"isDining\": false, \"consumption\": 45}";
 
-        // Parse JSON strings to Car objects
         Car car1 = parseCarFromJsonString(mockJson1);
         Car car2 = parseCarFromJsonString(mockJson2);
 
         assertNotNull(car1);
         assertNotNull(car2);
 
-        // Validate car properties
         assertEquals("CAR1", car1.getCarId());
         assertEquals("ELECTRIC", car1.getCarType());
         assertEquals("PEOPLE", car1.getPerson());
@@ -59,11 +56,7 @@ class SemaphoreTest {
         cars.add(car2);
         cars.add(car3);
 
-        // Guide cars to their respective stations
         semaphore.guideCars(cars);
-
-        // No direct access to the internal state of stations
-        // So we assume the stations will process the cars correctly
         assertDoesNotThrow(() -> {
             electricStation.processCars();
             gasStation.processCars();
@@ -72,7 +65,6 @@ class SemaphoreTest {
 
     @Test
     void testAllCarsProcessedByCorrectStations() {
-        // Create mock cars
         Car car1 = new Car("CAR1", "ELECTRIC", "PEOPLE", true);
         Car car2 = new Car("CAR2", "GAS", "ROBOTS", true);
 
@@ -80,17 +72,13 @@ class SemaphoreTest {
         cars.add(car1);
         cars.add(car2);
 
-        // Guide cars to stations
         semaphore.guideCars(cars);
 
-        // Process cars in ElectricStation
         assertDoesNotThrow(electricStation::processCars);
 
-        // Process cars in GasStation
         assertDoesNotThrow(gasStation::processCars);
     }
 
-    // Helper method to parse a JSON string into a Car object
     private Car parseCarFromJsonString(String jsonString) {
         try {
             JSONParser parser = new JSONParser();

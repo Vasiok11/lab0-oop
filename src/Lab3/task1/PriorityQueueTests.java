@@ -37,9 +37,9 @@ public class PriorityQueueTests{
         queue.enqueue("High priority car", 5);
         queue.enqueue("Medium priority car", 3);
 
-        queue.dequeue(); // Should remove "High"
-        queue.dequeue(); // Should remove "Medium"
-        queue.dequeue(); // Should remove "Low"
+        queue.dequeue();
+        queue.dequeue();
+        queue.dequeue();
 
         assertTrue(queue.isEmpty());
     }
@@ -51,14 +51,14 @@ public class PriorityQueueTests{
         queue.enqueue("Car3", 3);
         queue.enqueue("Car4", 4);
         queue.enqueue("Car5", 5);
-        queue.enqueue("Car6", 6); // Should not be added
+        queue.enqueue("Car6", 6);
 
         assertTrue(queue.isFull());
     }
 
     @Test
     public void testEmptyQueueDequeue() {
-        queue.dequeue(); // Should handle empty queue gracefully
+        queue.dequeue();
         assertTrue(queue.isEmpty());
     }
 

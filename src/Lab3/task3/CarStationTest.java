@@ -12,7 +12,7 @@ class CarStationTest {
 
     @BeforeEach
     void setUp() {
-        carQueue = new CircularQueue<>(); // Instantiate a new circular queue
+        carQueue = new CircularQueue<>();
         carStation = new CarStation(carQueue);
     }
 
@@ -31,7 +31,6 @@ class CarStationTest {
         }
         assertTrue(carQueue.isFull(), "Queue should be full after adding 5 cars");
 
-        // Try to add one more car
         carStation.addCar(new Car("C6", "Electric", "Robot", true));
         assertTrue(carQueue.isFull(), "Queue should remain full after attempting to add more cars");
     }
