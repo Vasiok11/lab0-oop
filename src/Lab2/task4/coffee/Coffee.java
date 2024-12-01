@@ -6,7 +6,7 @@ class Coffee {
         NORMAL,
         STRONG
     }
-    public Intensity coffeeIntensity;
+    private Intensity coffeeIntensity;
     private String name;
 
     public Coffee(Intensity coffeeIntensity, String name) {
